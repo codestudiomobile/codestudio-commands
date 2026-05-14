@@ -1,0 +1,105 @@
+{
+  "termux_programming_environment": {
+    "global_commands": {
+      "update_system": "pkg update && pkg upgrade -y",
+      "install_build_essentials": "pkg install build-essential binutils pkg-config -y"
+    },
+    "languages": {
+      "interpreted": {
+        "python": {
+          "package": "python",
+          "install": "pkg install python -y",
+          "extension": ".py",
+          "run": "python {{file}}",
+          "interactive_shell": "python"
+        },
+        "nodejs": {
+          "package": "nodejs",
+          "install": "pkg install nodejs -y",
+          "extension": ".js",
+          "run": "node {{file}}",
+          "interactive_shell": "node"
+        },
+        "ruby": {
+          "package": "ruby",
+          "install": "pkg install ruby -y",
+          "extension": ".rb",
+          "run": "ruby {{file}}",
+          "interactive_shell": "irb"
+        },
+        "php": {
+          "package": "php",
+          "install": "pkg install php -y",
+          "extension": ".php",
+          "run": "php {{file}}"
+        },
+        "perl": {
+          "package": "perl",
+          "install": "pkg install perl -y",
+          "extension": ".pl",
+          "run": "perl {{file}}"
+        },
+        "lua": {
+          "package": "lua54",
+          "install": "pkg install lua54 -y",
+          "extension": ".lua",
+          "run": "lua {{file}}"
+        }
+      },
+      "compiled": {
+        "c": {
+          "package": "clang",
+          "install": "pkg install clang -y",
+          "extension": ".c",
+          "compile": "clang {{file}} -o {{output}}",
+          "run": "./{{output}}"
+        },
+        "cpp": {
+          "package": "clang",
+          "install": "pkg install clang -y",
+          "extension": ".cpp",
+          "compile": "clang++ {{file}} -o {{output}}",
+          "run": "./{{output}}"
+        },
+        "rust": {
+          "package": "rust",
+          "install": "pkg install rust -y",
+          "extension": ".rs",
+          "compile": "rustc {{file}} -o {{output}}",
+          "run": "./{{output}}",
+          "project_manager": "cargo"
+        },
+        "golang": {
+          "package": "golang",
+          "install": "pkg install golang -y",
+          "extension": ".go",
+          "compile": "go build -o {{output}} {{file}}",
+          "run": "./{{output}}",
+          "direct_run": "go run {{file}}"
+        },
+        "java": {
+          "package": "openjdk-17",
+          "install": "pkg install openjdk-17 -y",
+          "extension": ".java",
+          "compile": "javac {{file}}",
+          "run": "java {{class_name}}"
+        },
+        "kotlin": {
+          "package": "kotlin",
+          "install": "pkg install kotlin -y",
+          "extension": ".kt",
+          "compile": "kotlinc {{file}} -include-runtime -d {{output}}.jar",
+          "run": "java -jar {{output}}.jar"
+        }
+      },
+      "shell_scripting": {
+        "bash": {
+          "package": "bash",
+          "extension": ".sh",
+          "run": "bash {{file}}",
+          "permission_fix": "chmod +x {{file}}"
+        }
+      }
+    }
+  }
+}
